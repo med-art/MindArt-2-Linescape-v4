@@ -40,14 +40,18 @@ var touchDownY;
 
 function preload() {
   paper = loadImage('data/paper1.jpg');
+    fullscreen(1)
 
 }
 
 function setup() {
 
+;
+
 
   createCanvas(windowWidth, windowHeight);
   dimensionCalc();
+
   slider1 = createSlider(0, 8, 4);
   slider2 = createSlider(0, 3, 0);
 
