@@ -82,6 +82,9 @@ function setup() {
 
 function toggleIt(){
   toggle = !toggle;
+  if (!fullscreen()) {
+    fullscreen(1);
+  }
 }
 
 function restart() {
