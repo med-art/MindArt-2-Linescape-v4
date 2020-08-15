@@ -8,9 +8,8 @@
     -webkit-tap-highlight-color:rgba(0,0,0,0);
     }
 
-.arcs4 {
+.gradient_p3 {
   height: 100%;
-
   overscroll-behavior: none;
   position: fixed;
 }
