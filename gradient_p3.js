@@ -67,7 +67,7 @@ function windowResized() {
   slider2.id("ui2");
 
   newButton = createButton('new');
-  newButton.mousePressed(restart);
+  newButton.mouseClicked(restart);
   newButton.class("select");
   newButton.id("ui3");
   newButton.position(width - (14 * vMax), height - (6.5 * vMax));
