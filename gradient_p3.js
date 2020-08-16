@@ -92,6 +92,10 @@ function windowResized() {
   cc = floor(random(0, colours.length));
   restart();
     lineVersion = 0
+
+    for (let i = 1; i < 5; i++){
+        $("#ui"+i).remove();
+    }
 }
 
 function setup() {
