@@ -140,7 +140,7 @@ function restart() {
     intermedia.line(0, j, width, j);
   }
 
-
+render();
 
 }
 
@@ -241,10 +241,12 @@ function touchMoved() {
   }
 
 
+render();
 
+}
+
+function render(){
   intermedia.image(newLayer, 0, 0, width, height);
-
-
   blendMode(BLEND);
   image(paper, 0, 0, width, height);
   blendMode(MULTIPLY);
@@ -254,11 +256,7 @@ function touchMoved() {
   textSize(width / 50);
   text("colour set " + cc, width - width / 5, height / 10);
   text("line multiplier = " + slider1.value() + "x", 10, 30);
-
   text("gap = " + sliderWords[slider2.value()], 10, 80);
-
-
-
 }
 
 function touchEnded() {
