@@ -60,8 +60,6 @@ function windowResized() {
   }
 
 
-
-
   slider1 = createSlider(0, 8, 4);
   slider2 = createSlider(0, 3, 0);
   slider1.position(10, 40);
@@ -87,15 +85,9 @@ function windowResized() {
   toggleBut.style('font-size', '2.6vmax');
   toggleBut.style('height', '4.5vmax');
 
-
-
   cc = floor(random(0, colours.length));
   restart();
     lineVersion = 0
-
-    for (let i = 1; i < 5; i++){
-        $("#ui"+i).remove();
-    }
 }
 
 function setup() {
