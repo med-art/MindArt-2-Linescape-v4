@@ -141,7 +141,7 @@ function restart() {
   }
 
 
-  touchMoved();
+
 }
 
 function dimensionCalc() {
