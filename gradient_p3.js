@@ -75,7 +75,7 @@ function windowResized() {
   newButton.style('height', '4.5vmax');
 
   toggleBut = createButton('toggle');
-  toggleBut.mousePressed(toggleIt);
+  toggleBut.mouseClicked(toggleIt);
   toggleBut.class("select");
   toggleBut.id("ui4");
   toggleBut.position(40, height - (6.5 * vMax));
