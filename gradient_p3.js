@@ -28,8 +28,8 @@ var colours = [
   // ['#F27EA9', '#05AFF2', '#F2B705', '#F29F05', '#F2541B'] // Lettering-Series-XXII-1
 ];
 
-var numPattern = [1,2,4,8,16,32,64,128,256];
-var numPattern2 = [1,2,3,5,8,13,21];
+var numPattern = [1, 2, 4, 8, 16, 32, 64, 128, 256];
+var numPattern2 = [1, 2, 3, 5, 8, 13, 21];
 
 var sliderWords = ["none", "small", "medium", "large"]
 
@@ -40,11 +40,9 @@ var touchDownY;
 
 function preload() {
   paper = loadImage('data/paper1.jpg');
-
-
 }
 
-function start(){
+function start() {
   $(".startBtn").remove();
   fullscreen(1);
   // note currently everything resets on windowResized. Unsure if this is logical yet
@@ -55,8 +53,8 @@ function windowResized() {
 
   dimensionCalc();
 
-  for (let i = 1; i < 5; i++){
-      $("#ui"+i).remove();
+  for (let i = 1; i < 5; i++) {
+    $("#ui" + i).remove();
   }
 
   slider1 = createSlider(0, 8, 4);
@@ -72,7 +70,7 @@ function windowResized() {
   newButton.mousePressed(restart);
   newButton.class("select");
   newButton.id("ui3");
-  newButton.position(width - (14*vMax), height-(6.5*vMax));
+  newButton.position(width - (14 * vMax), height - (6.5 * vMax));
   newButton.style('font-size', '2.6vmax');
   newButton.style('height', '4.5vmax');
 
@@ -80,26 +78,21 @@ function windowResized() {
   toggleBut.mousePressed(toggleIt);
   toggleBut.class("select");
   toggleBut.id("ui4");
-  toggleBut.position(40, height-(6.5*vMax));
+  toggleBut.position(40, height - (6.5 * vMax));
   toggleBut.style('font-size', '2.6vmax');
   toggleBut.style('height', '4.5vmax');
 
   cc = floor(random(0, colours.length));
   restart();
-    lineVersion = 0
+  lineVersion = 0
 }
 
 function setup() {
-createCanvas(windowWidth, windowHeight);
-
-
-
-
-
+  createCanvas(windowWidth, windowHeight);
 
 }
 
-function toggleIt(){
+function toggleIt() {
   toggle = !toggle;
 }
 
@@ -109,7 +102,7 @@ function restart() {
     cc = 0;
   }
   lineVersion++;
-  if (lineVersion >= numPattern.length){
+  if (lineVersion >= numPattern.length) {
     lineVersion = 0;
   }
 
@@ -117,8 +110,6 @@ function restart() {
   newLayer = createGraphics(windowWidth, windowHeight);
   intermedia = createGraphics(windowWidth, windowHeight);
   //newLayer.blendMode(BLEND);
-
-
 
   c1 = colours[cc][0];
   c2 = colours[cc][1];
@@ -129,9 +120,6 @@ function restart() {
   newLayer.strokeWeight(1);
 
   // make solid gradient, add smaller gradients
-
-
-
   from = color(c1);
   to = color(c2);
 
@@ -139,9 +127,7 @@ function restart() {
     intermedia.stroke(lerpColor(from, to, j / height));
     intermedia.line(0, j, width, j);
   }
-
-render();
-
+  render();
 }
 
 function dimensionCalc() {
@@ -166,7 +152,7 @@ function touchMoved() {
   gap = slider2.value();
 
   colWidth = width / colQty;
-  gap = (colWidth/10)*slider2.value();
+  gap = (colWidth / 10) * slider2.value();
 
 
   var tempSel = floor(mouseX / colWidth);
@@ -187,7 +173,7 @@ function touchMoved() {
     from = color(c3);
     to = color(c4);
 
-    if (toggle){
+    if (toggle) {
 
       from = color(c3);
       to = color(c4);
@@ -195,57 +181,57 @@ function touchMoved() {
       if (mouseY >= touchDownY) {
         for (var j = touchDownY; j < mouseY; j++) {
           newLayer.stroke(lerpColor(to, from, j / mouseY));
-                  console.log(j/mouseY);
-        //  newLayer.line(sel * colWidth, j, (sel * colWidth) + colWidth / div, j);
-          newLayer.line((sel*colWidth)+gap, j, (sel*colWidth)+colWidth-gap, j);
+
+          //  newLayer.line(sel * colWidth, j, (sel * colWidth) + colWidth / div, j);
+          newLayer.line((sel * colWidth) + gap, j, (sel * colWidth) + colWidth - gap, j);
         }
       } else {
         // CURRENTLY WORKING ON THIS!
         for (var j = touchDownY; j > mouseY; j--) {
           newLayer.stroke(lerpColor(from, to, mouseY / j));
-          console.log(j/mouseY);
+
           // newLayer.line(sel * colWidth, j, (sel * colWidth) + colWidth / div, j);
-          newLayer.line((sel*colWidth)+gap, j, (sel*colWidth)+colWidth-gap, j);
+          newLayer.line((sel * colWidth) + gap, j, (sel * colWidth) + colWidth - gap, j);
         }
       }
-}else {
-  from = color(c1);
-  to = color(c2);
+    } else {
+      from = color(c1);
+      to = color(c2);
 
-  if (mouseY >= touchDownY) {
-    for (var j = touchDownY; j < mouseY; j++) {
-      newLayer.stroke(lerpColor(to, from, j / mouseY));
-      // newLayer.line(sel * colWidth, j, (sel * colWidth) + colWidth / div, j);
-      newLayer.line((sel*colWidth)+gap, j, (sel*colWidth)+colWidth-gap, j);
+      if (mouseY >= touchDownY) {
+        for (var j = touchDownY; j < mouseY; j++) {
+          newLayer.stroke(lerpColor(to, from, j / mouseY));
+          // newLayer.line(sel * colWidth, j, (sel * colWidth) + colWidth / div, j);
+          newLayer.line((sel * colWidth) + gap, j, (sel * colWidth) + colWidth - gap, j);
 
+        }
+      } else {
+        for (var j = touchDownY; j > mouseY; j--) {
+          newLayer.stroke(lerpColor(from, to, mouseY / j));
+          // newLayer.line(sel * colWidth, j, (sel * colWidth) + colWidth / div, j);
+          newLayer.line((sel * colWidth) + gap, j, (sel * colWidth) + colWidth - gap, j);
+
+
+        }
+      }
     }
-  } else {
-    for (var j = touchDownY; j > mouseY; j--) {
-  newLayer.stroke(lerpColor(from, to, mouseY / j));
-      // newLayer.line(sel * colWidth, j, (sel * colWidth) + colWidth / div, j);
-      newLayer.line((sel*colWidth)+gap, j, (sel*colWidth)+colWidth-gap, j);
 
 
-    }
+
+
+
+
+
+
+
   }
+
+
+  render();
+
 }
 
-
-
-
-
-
-
-
-
-  }
-
-
-render();
-
-}
-
-function render(){
+function render() {
   intermedia.image(newLayer, 0, 0, width, height);
   blendMode(BLEND);
   image(paper, 0, 0, width, height);
