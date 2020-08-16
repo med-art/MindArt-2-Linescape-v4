@@ -73,7 +73,7 @@ function windowResized() {
   newButton.mousePressed(restart);
   newButton.class("select");
   newButton.id("ui3");
-  newButton.position(width - (14*vMax), height-(6.5*vMax));
+  newButton.position(width - (14*vMax), height-(6.5*vMax)+random(0,100));
   newButton.style('font-size', '2.6vmax');
   newButton.style('height', '4.5vmax');
 
@@ -81,7 +81,7 @@ function windowResized() {
   toggleBut.mousePressed(toggleIt);
   toggleBut.class("select");
   toggleBut.id("ui4");
-  toggleBut.position(40, height-(6.5*vMax));
+  toggleBut.position(40, height-(6.5*vMax)+random(0,100));
   toggleBut.style('font-size', '2.6vmax');
   toggleBut.style('height', '4.5vmax');
 
