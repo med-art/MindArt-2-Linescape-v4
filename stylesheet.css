@@ -25,7 +25,7 @@ transform: translate(-50%, -50%);
 
 }
 
-.startButton {
+.startBtn {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -35,8 +35,8 @@ transform: translate(-50%, -50%);
   letter-spacing: 1px;
   font-weight: 700;
   text-align: center;
-  background-color: transparent;
-  color: white;
+  /* background-color: transparent; */
+  color: black;
   border-width: 4px;
   border-color: white;
   border-style: solid;;
@@ -44,6 +44,11 @@ transform: translate(-50%, -50%);
   width: 40vmax;
   padding: 0;
   height: 10vmax;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
 }
 

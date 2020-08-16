@@ -40,16 +40,19 @@ var touchDownY;
 
 function preload() {
   paper = loadImage('data/paper1.jpg');
-    fullscreen(1)
+
 
 }
 
-function setup() {
+function start(){
+  $(".startBtn").remove();
+  fullscreen(1);
+  // note currently everything resets on windowResized. Unsure if this is logical yet
+}
 
-;
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 
-
-  createCanvas(windowWidth, windowHeight);
   dimensionCalc();
 
   slider1 = createSlider(0, 8, 4);
@@ -78,6 +81,16 @@ function setup() {
   cc = floor(random(0, colours.length));
   restart();
     lineVersion = 0
+}
+
+function setup() {
+createCanvas(windowWidth, windowHeight);
+
+
+
+
+
+
 }
 
 function toggleIt(){
