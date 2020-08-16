@@ -55,12 +55,26 @@ function windowResized() {
 
   dimensionCalc();
 
+  for (let i = 1; i < 5; i++){
+      $("#ui"+i).remove();
+  }
+
+
+
+
   slider1 = createSlider(0, 8, 4);
   slider2 = createSlider(0, 3, 0);
+  slider1.position(10, 40);
+  slider2.position(10, 90);
+  slider1.style('width', '300px');
+  slider2.style('width', '300px');
+  slider1.id("ui1");
+  slider2.id("ui2");
 
   newButton = createButton('new');
   newButton.mousePressed(restart);
   newButton.class("select");
+  newButton.id("ui3");
   newButton.position(width - (14*vMax), height-(6.5*vMax));
   newButton.style('font-size', '2.6vmax');
   newButton.style('height', '4.5vmax');
@@ -68,16 +82,13 @@ function windowResized() {
   toggleBut = createButton('toggle');
   toggleBut.mousePressed(toggleIt);
   toggleBut.class("select");
+  toggleBut.id("ui4");
   toggleBut.position(40, height-(6.5*vMax));
   toggleBut.style('font-size', '2.6vmax');
   toggleBut.style('height', '4.5vmax');
 
 
-  slider1.position(10, 40);
-  slider2.position(10, 90);
 
-  slider1.style('width', '300px');
-  slider2.style('width', '300px');
   cc = floor(random(0, colours.length));
   restart();
     lineVersion = 0
