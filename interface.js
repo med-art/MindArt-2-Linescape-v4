@@ -48,7 +48,7 @@ function createSwatch() {
   swatch = [];
   for (let i = 0; i < 2; i++) {
     swatch[i] = createButton("");
-    swatch[i].position((((i+ 1) * 7)) * vMax, height - (6 * vMax));
+    swatch[i].position(((i * 7)) * vMax, height - (6 * vMax));
     swatch[i].size(7 * vMax, 10.5 * vMax);
     swatch[i].style("background-color", colours[cc][i*2]);
         swatch[i].style("border-width", '4px');
@@ -66,8 +66,8 @@ function createSwatch() {
   toggleBut.mouseClicked(toggleIt);
   toggleBut.class("toggle");
   toggleBut.id("ui4");
-  toggleBut.position(7*vMax, height - (4 * vMax));
-  toggleBut.style('width', '14vmax')
+  toggleBut.position(3*vMax, height - (6 * vMax));
+  toggleBut.style('width', '18vmax')
   toggleBut.style('font-size', '1vmax');
   toggleBut.style('height', '4vmax');
 

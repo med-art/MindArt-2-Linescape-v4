@@ -101,8 +101,8 @@ function toggleIt() {
   toggle = !toggle;
 
   for (let i = 0; i < 2; i++) {
-        swatch[i].position((((i + 1) * 7)) * vMax, height - (6 * vMax));
-        swatch[i].size(7 * vMax, 6 * vMax);
+        swatch[i].position(((i * 9)+3) * vMax, height - (9 * vMax));
+        swatch[i].size(9 * vMax, 6 * vMax);
   }
 
 var n = 0;
@@ -111,8 +111,8 @@ if (toggle){
   n = 1;
 }
 
-  swatch[n].position(((((toggle) + 1) * 7)) * vMax, height - (10.5 * vMax));
-  swatch[n].size(7 * vMax, 10.5 * vMax);
+  swatch[n].position(((toggle * 9)+3) * vMax, height - (15.5 * vMax));
+  swatch[n].size(9 * vMax, 12.5 * vMax);
 }
 
 
