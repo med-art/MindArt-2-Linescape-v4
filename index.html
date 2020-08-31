@@ -1,33 +1,50 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>MindArt-1-Touchscape</title>
 
   <style>
-  @font-face {
-    font-family: AvenirNext;
-    src: url("AvenirNextLTPro-Regular.otf");
-  }
+    @font-face {
+      font-family: AvenirNext;
+      src: url("AvenirNextLTPro-Regular.otf");
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+
+
   </style>
 
-  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
-    <script src="libraries/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 
-  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
-  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
-  <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
-  <script language="javascript" type="text/javascript" src="gradient_p3.js"></script>
-  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+  <script src="assets/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="stylesheet.css">
 
-  <!-- This line removes any default padding and style.
-       You might only need one of these values set. -->
-  <style> body {padding: 0; margin: 0;} </style>
-</head>
+
+  <script src="assets/p5.js"></script>
+
+    <script src="assets/p5.sound.js"></script>
+
+  <script src="gradient.js"></script>
+  <script src="interface.js"></script>
+  </head>
 
 <body>
-  <button type="button" class="startBtn" onclick="start()">Start</button>
+
+
+  <div id="p5_loading" class="loadingclass">
+    <img src="assets/logo.jpg" class="loadImage">
+    <div class="loading">
+    <i class="fa fa-spinner fa-spin"></i>
+  </div>
+  </div>
+
 </body>
+
 </html>
